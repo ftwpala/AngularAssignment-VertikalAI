@@ -28,3 +28,11 @@ mat-expansion-panel:not(.mat-expanded)
   .mat-expansion-panel-header:hover:not([aria-disabled="true"]) {
   background-color: #57befa;
 }
+
+.mat-expansion-panel-spacing {
+  margin-top: 0px;
+}
+
+.mat-expansion-panel {
+  border-radius: 0px;
+}

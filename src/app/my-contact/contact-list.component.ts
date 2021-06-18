@@ -5,9 +5,9 @@ import { addContact } from '../create-contacts.actions';
 import { Contact } from '../object-interfaces/contact';
 
 @Component({
-  selector: 'app-my-counter',
-  templateUrl: './my-contact-component.html',
-  styleUrls: ['./my-contact-component.scss'],
+  selector: 'contact-list',
+  templateUrl: './contact-list.component.html',
+  styleUrls: ['./contact-list.component.scss'],
 })
 export class MyCounterComponent {
   contacts$: Observable<Contact[]>;
