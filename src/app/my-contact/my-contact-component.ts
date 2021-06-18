@@ -1,28 +1,22 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset } from '../create-contacts.actions';
- 
+import { addContact } from '../create-contacts.actions';
+import { Contact } from '../object-interfaces/contact';
+
 @Component({
   selector: 'app-my-counter',
   templateUrl: './my-contact-component.html',
+  styleUrls: ['./my-contact-component.scss'],
 })
 export class MyCounterComponent {
-  count$: Observable<number>;
- 
-  constructor(private store: Store<{ count: number }>) {
-    this.count$ = store.select('count');
+  contacts$: Observable<Contact[]>;
+
+  constructor(private store: Store<{ contacts: Array<Contact> }>) {
+    this.contacts$ = store.select('contacts');
   }
- 
-  increment() {
-    this.store.dispatch(increment());
-  }
- 
-  decrement() {
-    this.store.dispatch(decrement());
-  }
- 
-  reset() {
-    this.store.dispatch(reset());
+
+  addContact(contact: Contact) {
+    this.store.dispatch(addContact({ contact }));
   }
 }

@@ -1,48 +1,32 @@
-<mat-accordion>
-    <mat-expansion-panel class="col-12">
-        <mat-expansion-panel-header class="d-flex justify-content-right">
-            <mat-panel-title>
-                Personal data
-            </mat-panel-title>
-            <mat-panel-description>
-                Type your name and age
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-
-        <mat-form-field>
-            <mat-label>First name</mat-label>
+<div class="col-12 me-3"
+    style="position:fixed; z-index: 999; background-color: rgb(151, 246, 156); padding-left: 24px;  padding-right: 24px;">
+    <label class="my-2 myLabel">Fill and click the button to create a new contact</label>
+    <div>
+        <mat-form-field class="col-2">
+            <mat-label>Input</mat-label>
             <input matInput>
         </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Age</mat-label>
-            <input matInput type="number" min="1">
-        </mat-form-field>
-
-    </mat-expansion-panel>
-    <mat-expansion-panel class="col-12">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Personal data
-            </mat-panel-title>
-            <mat-panel-description>
-                Type your name and age
-                <mat-icon>account_circle</mat-icon>
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-
-        <mat-form-field>
-            <mat-label>First name</mat-label>
+        <mat-form-field class="col-2">
+            <mat-label>Input</mat-label>
             <input matInput>
         </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Age</mat-label>
-            <input matInput type="number" min="1">
+        <mat-form-field class="col-2">
+            <mat-label>Input</mat-label>
+            <input matInput>
         </mat-form-field>
-
-    </mat-expansion-panel>
-</mat-accordion>
-
-
-<app-my-counter></app-my-counter>
+        <mat-form-field class="col-2">
+            <mat-label>Input</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-2 ">
+            <mat-label>Input</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <span class="col-2 d-flex float-end">
+            <button mat-stroked-button class="ms-3 w-100" color="primary" (click)="onAdd()">Primary</button>
+        </span>
+    </div>
+</div>
+<div>
+    <app-my-counter style="top: 93px; z-index: 9; position: relative;"></app-my-counter>
+</div>

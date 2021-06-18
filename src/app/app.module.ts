@@ -8,20 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './create-contacts.reducer';
 
-import { MatExpansionModule } from '@angular/material/expansion'; 
-import { MatFormFieldModule } from '@angular/material/form-field'; 
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatInputModule } from '@angular/material/input'; 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { MyCounterComponent } from './my-contact/my-contact-component';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    MyCounterComponent
-  ],
+  declarations: [AppComponent, MyCounterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,9 +26,10 @@ import { MyCounterComponent } from './my-contact/my-contact-component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    StoreModule.forRoot({ count: counterReducer })
+    MatButtonModule,
+    StoreModule.forRoot({ contacts: counterReducer }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, MyCounterComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,7 +1,32 @@
-<button (click)="increment()">Increment</button>
+<!-- <button (click)="increment()">Increment</button>
 
 <div>Current Count: {{ count$ | async }}</div>
 
 <button (click)="decrement()">Decrement</button>
 
-<button (click)="reset()">Reset Counter</button>
+<button (click)="reset()">Reset Counter</button> -->
+
+<mat-accordion>
+  <mat-expansion-panel class="col-12" *ngFor="let contact of contacts$ | async">
+    <mat-expansion-panel-header class="col-12 d-flex">
+      <mat-panel-title class="col-2"> {{contact.firstName}} </mat-panel-title>
+      <mat-panel-description class="col-10">
+        {{contact.lastName}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="col-12 d-flex">
+      <span class="col-2">
+        <mat-label>Phone:</mat-label>
+        <mat-label>{{contact.phoneNumber}}</mat-label>
+      </span>
+      <span class="col-2">
+        <mat-label>Email:</mat-label>
+        <mat-label>{{contact.email}}</mat-label>
+      </span>
+      <span class="col-2">
+        <mat-label>Address:</mat-label>
+        <mat-label>{{contact.address}}</mat-label>
+      </span>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
